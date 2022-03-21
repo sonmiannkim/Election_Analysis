@@ -1,6 +1,7 @@
 # Add our dependencies.
 import csv
 import os
+import pathlib
 from pathlib import Path
 #If directory doesn't exist create one, if it exists will do nothing
 if not os.path.exists('analysis'):
@@ -10,9 +11,10 @@ filename = Path("analysis/election_analysis.txt")
 # will create file, if it exists will do nothing
 filename.touch(exist_ok=True)  
 
-
 # Assign a variable to load a file from a path.
-file_to_load = os.path.join("Resources", "election_results.csv")
+#One level up add this ("..", "Resources", "election_results.csv")
+file_to_load = os.path.join("..", "resources", "election_results.csv")
+print("THIS IS FILE PATH : " + file_to_load)
 # Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
@@ -89,8 +91,10 @@ with open(file_to_save, "w") as txt_file:
             winning_candidate = candidate_name
         #Print each candidate summary
         txt_file.write(f"{candidate_name} : {vote_percentage:.1f}% ({votes:,})\n")
-    txt_file.write("----------------------------\n")
+    #txt_file.write("----------------------------\n")
     # Winning summary
+    # with open (csvpath)  as csvfile:
+    #reader = csv.reader(csvfile, delimeter = ",")
     winning_candidate_summary = (
         f"----------------------------\n"
         f"Winner: {winning_candidate}\n"
@@ -99,4 +103,9 @@ with open(file_to_save, "w") as txt_file:
         f"----------------------------\n")
     txt_file.write(winning_candidate_summary)
 
-txt_file.close
+txt_file.close()
+#file_outpath = os.path.join("..", "output", "somedata.txt")
+#with open(file_outpth, "w") as textfile:
+# can also use tab \t
+#e.g. f"\nLast Name \tFirst Name\t EID \n"
+# Can not use back slash f"\" will not work.
