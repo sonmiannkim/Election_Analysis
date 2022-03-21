@@ -45,17 +45,12 @@ Based on developing this script, this can be used for further delvelopment with 
 	- Input file format has to be the same or asking for the valid index for county and candidate
 	- File has to be clean - we can have a cleaning program to ensure this program to run correctly remove invalid format entries
 		
-		- simple minor modification of the script exampe :
-			- Add in the beginning of the script 
-				- cvs_election_result = input("Please enter the election file name with extension:")
-			- Change file to load to input variable
-				- file_to_load = os.path.join("resources", cvs_election_result)
-			- Ask to ensure the user the file is place in the resources folder
-				- is_cvs_file_placed = input("Please add the election file to resources folder.  Enter yes if you are done:")
-			- If yes continue the script
-				- if(is_cvs_file_placed == "yes"):
-			- Otherwise exit using quit function
-	
+	- simple minor modification of the script example :
+		- Add in the beginning of the script [ cvs_election_result = input("Please enter the election file name with extension:") ]
+		- Change file to load to input variable [ file_to_load = os.path.join("resources", cvs_election_result) ]
+		- Ask to ensure the user the file is place in the resources folder [ is_cvs_file_placed = input("Please add the election file to resources folder.  Enter yes if you are done:") ]
+		- If yes continue the script [ if(is_cvs_file_placed == "yes"): ]
+		- Otherwise exit using quit function [ else: ]
 	 
 	
 
