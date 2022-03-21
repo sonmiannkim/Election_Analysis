@@ -13,7 +13,7 @@ filename.touch(exist_ok=True)
 
 # Assign a variable to load a file from a path.
 #One level up add this ("..", "Resources", "election_results.csv")
-file_to_load = os.path.join("..", "resources", "election_results.csv")
+file_to_load = os.path.join("resources", "election_results.csv")
 print("THIS IS FILE PATH : " + file_to_load)
 # Assign a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
